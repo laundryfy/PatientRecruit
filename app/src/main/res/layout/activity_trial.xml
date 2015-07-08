@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.oneworldinc.android.patientrecruit.TrialActivity">
+
+    <LinearLayout  android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:src="@drawable/ic_appss"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#999"
+            android:text="Clinical Trial Recruitment Center"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+        <RadioGroup
+            android:id="@+id/trial_radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/choice1"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pulmonary arterial hypertension (PAH)"/>
+
+            <RadioButton
+                android:id="@+id/choice2"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Worsening chronic heart failure (WCHF)" />
+
+            <RadioButton
+                android:id="@+id/choice3"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worsening chronic heart failure (WCHF)" />
+
+            <RadioButton
+                android:id="@+id/choice4"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Erythropoietin-sensitive anemia in patients with chronic kidney disease and end-stage kidney disease"/>
+
+
+            <RadioButton
+                android:id="@+id/choice5"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Non-cystic fibrosis bronchiectasis"
+                />
+            <RadioButton
+                android:id="@+id/choice6"
+                android:padding="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Erythropoietin-sensitive anemia in patients with chronic kidney disease and end-stage kidney disease"/>
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/choice7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gram negative pneumonia in mechanically ventilated patients"/>
+
+
+            <RadioButton
+                android:id="@+id/choice8"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chronic-thromboembolic pulmonary hypertension (CTEPH)"/>
+
+
+            <RadioButton
+                android:id="@+id/choice9"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diabetic nephropathy (DN) in patients with type 2 DM to reduce the risk of CV death and deterioration of kidney function"/>
+
+        </RadioGroup>
+
+
+
+
+
+    </ScrollView>
+</LinearLayout>
+
+
+</LinearLayout>

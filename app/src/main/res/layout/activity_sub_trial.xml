@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.oneworldinc.android.patientrecruit.SubTrialActivity">
+
+    <LinearLayout  android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:src="@drawable/ic_appss"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#999"
+            android:text="Clinical Trial Recruitment Center"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/subTrial_Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="MOTION, Measuring Outcomes in Treatment Naive Patients"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:text="Early Signs of Efficacy Study With Riociguat in Adult Homozygous Delta F508 CF Patients"
+                    android:textColor="#ff000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:text="Efficacy and Safety of Riociguat in Patients With Systemic Sclerosis"
+                    android:textColor="#ff000000" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="EXPERT, EXPosurE Registry RiociguaT in Patients With Pulmonary Hypertension"
+                    android:textColor="#ff000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Efficacy and Safety of Riociguat in Patients With Symptomatic PH Associated With IIP"
+                    android:textStyle="bold"
+                    android:textColor="#ff000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:text="MOTION, Measuring Outcomes in Treatment Naive Patients"
+                    android:textColor="#ff000000" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">PatientRecruit</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_trial">TrialActivity</string>
+    <string name="title_activity_sub_trial">SubTrialActivity</string>
+    <string name="title_activity_trial_detail">TrialDetailActivity</string>
+    <string name="title_activity_exclusion">ExclusionActivity</string>
+    <string name="title_activity_inclusion">InclusionActivity</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <array name="exclusion_criteria">
+        <item>Pregnant</item>
+        <item>On nitrate and/or nitric oxide (NO) donor therapy</item>
+        <item>Taking phosphodiesterase 5 (PDE5) inhibitors (such as sildenafil, tadalafil, vardenafil)</item>
+        <item>Taking non-specific PDE inhibitors (theophylline,dipyridamole)</item>
+        <item>Non-WHO group 1 Pulmonary Hypertension</item>
+        <item>Severe restrictive lung disease</item>
+        <item>History of uncontrolled high blood pressure or hypotension</item>
+        <item>A medical disorder, condition, or history that in the opinion of the Investigator would impair their ability to participate or complete this study</item>
+        <item>Active state of hemoptysis or pulmonary hemorrhage,including those events managed by bronchial artery embolization</item>
+
+    </array>
+    <array name="inclusion_criteria">
+        <item>Male or female patients, 18 to 80 years of age at Visit 0</item>
+        <item>Women of childbearing potential must have a negative pretreatment
+            pregnancy test, negative monthly pregnancy test, and
+            must use reliable methods of contraception according to the
+            Risk Evaluation Mitigation Strategies (REMS) guidance
+        </item>
+        <item>Symptomatic pulmonary arterial hypertension, World Health
+            Organization Group 1 with a pulmonary vascular resistance
+            (PVR) >300 dyn*sec*cm-5, mean pulmonary artery pressure
+            (PAP mean) ≥25 mmHg, and pulmonary capillary wedge
+            pressure (PCWP) ≤15 mmHg as assessed by right heart
+            catheterization within 6 months prior to Screening (Visit 0)
+        </item>
+        <item>• Idiopathic (IPAH)
+            • Familial (FPAH)
+            • Associated with PAH (APAH) due to:
+            — Connective tissue disease
+            — Congenital heart disease, but only if patient
+            underwent surgical repair more than one year
+            before enrollment
+            — Anorexigen or amphetamine use
+            — Portal hypertension with liver cirrhosis
+        </item>
+        <item>Not treated with PAH-specific pulmonary medications within 14
+            days of Screening (Visit 0)
+        </item>
+        <item>6MWD between 150 meters and 450 meters</item>
+    </array>
+</resources>
