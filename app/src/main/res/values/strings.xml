@@ -9,6 +9,7 @@
     <string name="title_activity_exclusion">ExclusionActivity</string>
     <string name="title_activity_inclusion">InclusionActivity</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="action_register">Register</string>
     <array name="exclusion_criteria">
         <item>Pregnant</item>
         <item>On nitrate and/or nitric oxide (NO) donor therapy</item>

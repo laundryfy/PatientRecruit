@@ -14,7 +14,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:gravity="center"
-            android:src="@drawable/ic_appss"
+            android:src="@drawable/ic_launcher"
             />
         <TextView
             android:layout_width="match_parent"

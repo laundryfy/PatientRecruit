@@ -1,5 +1,6 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -8,6 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 public class ResultActivity extends ActionBarActivity {
@@ -24,14 +31,40 @@ public class ResultActivity extends ActionBarActivity {
         emailSent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mail = emailId.getText().toString();
-                String subject = "Patient is Qualified";
-                String message = "Hello your Qualified \n +Thanks and Regards XXX";
-                if (!mail.equals("")) {
-//                    sendMail(mail, subject, message);
-                    Toast.makeText(ResultActivity.this, "Mail Successfully sent to" + "    " + mail, Toast.LENGTH_SHORT).show();
+                String email = emailId.getText().toString();
+                if (!email.equals("")) {
+                    ApiClient.post("sendEmail?emailId="+email, null, new JsonHttpResponseHandler(){
+
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, String responseString) {
+
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+                        }
+
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+
+
+                        }
+                    });
+
+
                 } else {
-                    Toast.makeText(ResultActivity.this, "Please enter the mail id" + "" + mail, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResultActivity.this, "Please enter the mail id" + "" + email, Toast.LENGTH_SHORT).show();
                 }
 
 
