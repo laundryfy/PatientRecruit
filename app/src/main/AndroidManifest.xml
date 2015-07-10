@@ -32,6 +32,7 @@
         <activity
             android:name=".TrialActivity"
             android:label="@string/title_activity_trial"
+            android:icon="@android:drawable/ic_dialog_email"
             android:screenOrientation="landscape">
         </activity>
         <activity
