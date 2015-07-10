@@ -8,6 +8,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,13 +20,27 @@ TextView trialDetailContent;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial_detail);
+
+        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+        view.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView titleView = (TextView) view.findViewById(R.id.title_text);
+        titleView.setText("Clinical Trial Recruitment Center");
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.setElevation(0);
+            actionBar.setCustomView(view);
+            actionBar.setDisplayShowCustomEnabled(true);
+        }
+
+
+
         back=(Button)findViewById(R.id.button_Return);
         next=(Button)findViewById(R.id.button_Continue);
         trialDetailContent=(TextView)findViewById(R.id.trialDetail);
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar!=null) {
-            actionBar.hide();
-        }
+
 
         String content="The MOTION study is a prospective, Phase IV study, enrolling 61 patients" +
                 "with Pulmonary Arterial Hypertension (PAH). The study designed to further" +
@@ -62,7 +77,7 @@ TextView trialDetailContent;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

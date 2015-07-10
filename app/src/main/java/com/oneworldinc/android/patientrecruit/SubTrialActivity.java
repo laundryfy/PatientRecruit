@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,10 +28,20 @@ public class SubTrialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_trial);
 
+        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+        view.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView titleView = (TextView) view.findViewById(R.id.title_text);
+        titleView.setText("Clinical Trial Recruitment Center");
+
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null) {
-            actionBar.hide();
+            actionBar.setElevation(0);
+            actionBar.setCustomView(view);
+            actionBar.setDisplayShowCustomEnabled(true);
         }
+
         TextView colourChangeText = (TextView) findViewById(R.id.colourChangeText);
         TextView subTrialText=(TextView)findViewById(R.id.subTrial_Text);
         String text = "Early Signs of Efficacy Study With Riociguat in Adult Homozygous Delta F508 ";
@@ -73,7 +84,7 @@ public class SubTrialActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -102,7 +113,7 @@ public class SubTrialActivity extends AppCompatActivity {
         textView.setPadding(10, 10, 10, 10);
         textView.setTextColor(Color.rgb(60, 128, 203));
         textView.setText(alert);
-        textView.setGravity(Gravity.CENTER);
+        textView.setGravity(Gravity.NO_GRAVITY);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

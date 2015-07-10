@@ -1,9 +1,13 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class InclusionActivity extends ActionBarActivity {
@@ -12,6 +16,23 @@ public class InclusionActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inclusion);
+
+
+
+        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+        view.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView titleView = (TextView) view.findViewById(R.id.title_text);
+        titleView.setText("Inclusion Criteria");
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.setElevation(0);
+            actionBar.setCustomView(view);
+            actionBar.setDisplayShowCustomEnabled(true);
+        }
+
     }
 
 

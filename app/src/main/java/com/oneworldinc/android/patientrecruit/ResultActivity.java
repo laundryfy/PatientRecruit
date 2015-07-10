@@ -1,13 +1,15 @@
 package com.oneworldinc.android.patientrecruit;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -24,6 +26,23 @@ public class ResultActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+
+        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+        view.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView titleView = (TextView) view.findViewById(R.id.title_text);
+        titleView.setText("");
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.setElevation(0);
+            actionBar.setCustomView(view);
+            actionBar.setDisplayShowCustomEnabled(true);
+        }
+
+
         Button emailSent = (Button) findViewById(R.id.button_emailSent);
         final EditText emailId = (EditText) findViewById(R.id.text_email);
 

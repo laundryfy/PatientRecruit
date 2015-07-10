@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
 
     tools:context=".MainActivity">
 
@@ -11,22 +12,20 @@
         android:id="@+id/register_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:paddingBottom="5dp">
+        android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="top"
-            android:paddingTop="5dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="10dp"
             android:text="Please Register"
             android:textColor="#000000"
             android:textSize="20dp"
+            android:padding="10dp"
             android:textStyle="bold" />
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:weightSum="9">
+            android:weightSum="9"
+            android:padding="5dp">
 
             <EditText
                 android:id="@+id/firstName"
@@ -53,7 +52,7 @@
                 android:gravity="center|left"
                 android:hint="First"
                 android:imeOptions="actionDone"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textStyle="bold" />
@@ -69,7 +68,7 @@
                 android:gravity="center|left"
                 android:hint="Last"
                 android:imeOptions="actionDone"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textStyle="bold" />
@@ -80,8 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
+            android:padding="5dp">
 
             <EditText
                 android:id="@+id/email"
@@ -93,7 +91,7 @@
                 android:hint="E-mail"
                 android:imeOptions="actionDone"
                 android:inputType="textEmailAddress"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textStyle="bold" />
@@ -103,8 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
+            android:padding="5dp"
             android:weightSum="9">
 
             <EditText
@@ -117,7 +114,7 @@
                 android:background="#90969696"
                 android:hint="City"
                 android:imeOptions="actionDone"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textStyle="bold" />
@@ -131,6 +128,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="2"
                 android:singleLine="true"
+                android:padding="10dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
             <!--</LinearLayout>-->
@@ -142,7 +140,7 @@
                 android:background="#90969696"
                 android:hint="Zip"
                 android:imeOptions="actionDone"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:singleLine="true"
@@ -154,8 +152,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
+            android:padding="5dp"
             android:orientation="vertical">
 
             <Spinner
@@ -164,9 +161,8 @@
                 android:layout_height="43dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:gravity="center"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
                 android:singleLine="true"
+                android:padding="10dp"
                 android:spinnerMode="dropdown" />
 
         </LinearLayout>
@@ -175,7 +171,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
         <Button
@@ -184,6 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
+            android:padding="10dp"
             android:text="Next"
             android:textAllCaps="false" />
 
