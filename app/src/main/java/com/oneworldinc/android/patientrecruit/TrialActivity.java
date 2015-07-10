@@ -6,8 +6,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 public class TrialActivity extends AppCompatActivity {
@@ -17,9 +20,18 @@ public class TrialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial);
 
+        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+        view.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView titleView = (TextView) view.findViewById(R.id.title_text);
+        titleView.setText("Clinical Trial Recruitment Center");
+
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null) {
-            actionBar.hide();
+            actionBar.setElevation(0);
+            actionBar.setCustomView(view);
+            actionBar.setDisplayShowCustomEnabled(true);
         }
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
