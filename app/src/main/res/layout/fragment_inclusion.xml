@@ -40,18 +40,17 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/inclusion_alert"
+                android:id="@+id/inclusion_alert_one"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
                 android:padding="5dp"
-                android:text="This patient is not qualified for the MOTION study due to the “No” response to the
-                following Inclusion Criterion"
+                android:text="This patient is not qualified for the MOTION study due to the “No” response to the following Inclusion Criterion"
                 android:textColor="#000000"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/inclusion_alert1"
+                android:id="@+id/inclusion_alert_two"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="5dp"
@@ -63,6 +62,7 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/radio_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -94,31 +94,30 @@
     <LinearLayout
         android:id="@+id/alert_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingLeft="40dp"
-        android:paddingRight="50dp"
         android:visibility="gone">
 
         <Button
-            android:id="@+id/button_EndSesson"
+            android:id="@+id/button_end_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ffff8b36"
-            android:text="End Session "
+            android:text="End Session"
+            android:padding="10dp"
             android:gravity="center"
             android:textAllCaps="false"
             android:layout_marginRight="20dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button_restartSession"
+            android:id="@+id/button_restart_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:background="#a02effbc"
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_marginLeft="20dp"
             android:text="Return to Start"
             android:textAllCaps="false"
