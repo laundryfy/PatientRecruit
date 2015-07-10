@@ -1,28 +1,50 @@
 package com.oneworldinc.android.patientrecruit;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 
 
-public class MainActivity extends ActionBarActivity {
-TextView next;
+public class MainActivity extends AppCompatActivity {
+Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        next=(TextView)findViewById(R.id.next);
-        Intent intent=new Intent(MainActivity.this,TrialActivity.class);
-        finish();
-        startActivity(intent);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.setTitle("Welcome to the Bayer Clinical Trial Recruitment Center");
+            actionBar.setIcon(R.drawable.ic_launcher);
+
+        }
+
+        next=(Button)findViewById(R.id.next);
+
+        Spinner specialty= (Spinner)findViewById(R.id.specialty);
+        Spinner state=(Spinner)findViewById(R.id.state);
+        String[] specialtyItem = new String[]{"Specialty","Cardiologist", "Hematologist", "Rheumatologist","Pulmonologist","Infectious Disease","Other"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, specialtyItem);
+        specialty.setAdapter(adapter);
+        String[] stateDetail=new String[]{"State","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI",
+                "ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH",
+                "NJ","NM","NY","NC","ND","OH","OK","OR","PA","PR","PC","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"};
+        ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateDetail);
+        state.setAdapter(stateAdapter);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,TrialActivity.class);
+                finish();
+                startActivity(intent);
             }
         });
     }
@@ -42,7 +64,7 @@ TextView next;
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.profile) {
             return true;
         }
 

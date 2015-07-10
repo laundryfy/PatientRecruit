@@ -1,19 +1,23 @@
 package com.oneworldinc.android.patientrecruit;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.RadioGroup;
 
 
-public class ExclusionActivity extends ActionBarActivity {
+public class ExclusionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exclusion);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.hide();
+        }
 
 
     }

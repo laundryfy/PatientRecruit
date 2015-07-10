@@ -1,22 +1,42 @@
 package com.oneworldinc.android.patientrecruit;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
-public class TrialDetailActivity extends ActionBarActivity {
+public class TrialDetailActivity extends AppCompatActivity {
 Button back,next;
+TextView trialDetailContent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial_detail);
         back=(Button)findViewById(R.id.button_Return);
         next=(Button)findViewById(R.id.button_Continue);
+        trialDetailContent=(TextView)findViewById(R.id.trialDetail);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null) {
+            actionBar.hide();
+        }
+
+        String content="The MOTION study is a prospective, Phase IV study, enrolling 61 patients" +
+                "with Pulmonary Arterial Hypertension (PAH). The study designed to further" +
+                "explore patient-reported outcomes in PAH subjects who are not on active" +
+                "treatment and living in the United States. In addition, the study will be" +
+                "exploring the use of new telemetric technology (Accelerator band) to" +
+                "evaluate if this technology correlates with improvements in 6 Minute" +
+                "Walking Distance 6MWD in patients with PAH ";
+        String styledText = "<u><font color='#90EE90'>Full Trial Information</font></u>";
+        trialDetailContent.setText(Html.fromHtml(content + styledText), TextView.BufferType.SPANNABLE);
+        
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

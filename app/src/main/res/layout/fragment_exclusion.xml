@@ -10,20 +10,21 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:padding="10dp">
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:gravity="center"
-            android:src="@drawable/ic_launcher"
-            />
+            android:src="@drawable/ic_launcher" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="#999"
             android:text="Exclusion Criteria"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textColor="#999"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
@@ -53,19 +54,53 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="50dp"
-        android:layout_weight="80">
+        android:layout_weight="80"
+        android:padding="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/elclusive_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 android:gravity="center"
                 android:lineSpacingMultiplier="1.5"
+                android:padding="5dp"
                 android:text="Pregnant"
                 android:textColor="#000000"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/exclusion_alert"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:padding="5dp"
+
+                android:text="This patient is not qualified for the MOTION study due to the “Yes” response to the
+following Exclusion Criterion"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/exclusion_alert1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:text="Taking non-specific PDE inhibitors (theophylline, dipyridamole)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
     </ScrollView>
 
     <LinearLayout

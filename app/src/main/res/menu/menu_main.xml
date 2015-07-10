@@ -1,6 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_register"
-        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/profile" android:title="Profile"
+        app:showAsAction="never"/>
+    <item android:id="@+id/videoOverview" android:title="Video overview (2 minute)"
+        app:showAsAction="never"/>
+    <item android:id="@+id/contactBayer" android:title="Contact Bayer"
+        app:showAsAction="never"/>
+    <item android:id="@+id/disclaimer" android:title="Disclaimer"
+        app:showAsAction="never"/>
+    <item android:id="@+id/privacy" android:title="Privacy Policy and HIPAA"
+        app:showAsAction="never"/>
 </menu>
