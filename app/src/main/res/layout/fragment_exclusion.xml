@@ -32,7 +32,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/elclusive_text"
+                android:id="@+id/exclusion_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
@@ -46,7 +46,7 @@
                 android:visibility="visible" />
 
             <TextView
-                android:id="@+id/exclusion_alert"
+                android:id="@+id/exclusion_alertOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
@@ -58,7 +58,7 @@ following Exclusion Criterion"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/exclusion_alert1"
+                android:id="@+id/exclusion_alertTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="5dp"
@@ -73,6 +73,7 @@ following Exclusion Criterion"
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/radio_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -99,5 +100,37 @@ following Exclusion Criterion"
                 android:text="No" />
         </RadioGroup>
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/alert_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/button_EndSesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffff8b36"
+            android:text="End Session"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_restartSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#a02effbc"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Return to Start"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

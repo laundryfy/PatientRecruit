@@ -51,32 +51,38 @@ public class ResultActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 String email = emailId.getText().toString();
+
                 if (!email.equals("")) {
                     ApiClient.post("sendEmail?emailId="+email, null, new JsonHttpResponseHandler(){
 
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
+                            //Toast.makeText(ResultActivity.this, "yes", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
 
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-
+                            //Toast.makeText(ResultActivity.this, "No", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
 
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, String responseString) {
-
+                            //Toast.makeText(ResultActivity.this, "No", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
+                            //Toast.makeText(ResultActivity.this, "No", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-
+                            //Toast.makeText(ResultActivity.this, "No", Toast.LENGTH_SHORT).show();
+                            finish();
 
                         }
                     });

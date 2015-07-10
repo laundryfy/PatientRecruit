@@ -1,8 +1,8 @@
 package com.oneworldinc.android.patientrecruit;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +17,8 @@ import android.widget.TextView;
  */
 public class InclusionActivityFragment extends Fragment {
 View rootView;
+    Button endSession, restartSession;
+
     public InclusionActivityFragment() {
     }
 
@@ -25,7 +27,6 @@ View rootView;
                              Bundle savedInstanceState) {
         rootView= inflater.inflate(R.layout.fragment_inclusion, container, false);
         int exclusiveContentPosition = 0;
-        final Button errorMsg = (Button) rootView.findViewById(R.id.button_inclusive_pass);
         RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.inclusive_radiogroup);
         final TextView exclusivePass = (TextView) rootView.findViewById(R.id.inclusive_pass);
         final TextView exclusiveContent = (TextView) rootView.findViewById(R.id.inclusive_text);
@@ -43,7 +44,6 @@ View rootView;
                 if (check.equals("Yes")) {
                     finalExclusiveContentPosition[0]++;
                     if (finalExclusiveContentPosition[0] < exclusiveContent_array.length) {
-                        errorMsg.setVisibility(View.GONE);
                         exclusivePass.setVisibility(View.VISIBLE);
                         exclusivePass.setText("Passed " + finalExclusiveContentPosition[0] + " of 6");
                         exclusiveContent.setText(exclusiveContent_array[finalExclusiveContentPosition[0]]);
@@ -57,11 +57,8 @@ View rootView;
 
                 }
                 if (check.equals("No")) {
-//                    radioButton.clearFocus();
-//                    radioButton.setFocusable(false);
-//                    radioButton.isChecked();
 
-                    errorMsg.setVisibility(View.VISIBLE);
+
                     exclusivePass.setVisibility(View.GONE);
 
 

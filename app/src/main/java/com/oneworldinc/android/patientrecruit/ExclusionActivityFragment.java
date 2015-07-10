@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ import android.widget.TextView;
  */
 public class ExclusionActivityFragment extends Fragment {
     View rootView;
-
+    Button endSession, restartSession;
     public ExclusionActivityFragment() {
     }
 
@@ -27,9 +29,17 @@ public class ExclusionActivityFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_exclusion, container, false);
         RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.exclusive_radiogroup);
         final TextView exclusivePass = (TextView) rootView.findViewById(R.id.exclusive_pass);
-        final TextView exclusiveContent = (TextView) rootView.findViewById(R.id.elclusive_text);
+        final TextView exclusionContent = (TextView) rootView.findViewById(R.id.exclusion_text);
         final String[] exclusiveContent_array = getResources().getStringArray(R.array.exclusion_criteria);
-        exclusiveContent.setText(exclusiveContent_array[0]);
+        final LinearLayout alertLayout = (LinearLayout) rootView.findViewById(R.id.alert_layout);
+        final LinearLayout radioLayout = (LinearLayout) rootView.findViewById(R.id.radio_layout);
+        final TextView exclusionAlert = (TextView) rootView.findViewById(R.id.exclusion_alertOne);
+        final TextView exclusionAlert1 = (TextView) rootView.findViewById(R.id.exclusion_alertTwo);
+        endSession = (Button) rootView.findViewById(R.id.button_EndSesson);
+        restartSession = (Button) rootView.findViewById(R.id.button_restartSession);
+
+
+        exclusionContent.setText(exclusiveContent_array[0]);
         final int[] finalExclusiveContentPosition = {exclusiveContentPosition};
 //        finalExclusiveContentPosition[0]++;
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -41,6 +51,31 @@ public class ExclusionActivityFragment extends Fragment {
                 String yes = "Yes";
                 if (check.equals("Yes")) {
                     exclusivePass.setVisibility(View.GONE);
+                    radioLayout.setVisibility(View.GONE);
+                    exclusionContent.setVisibility(View.GONE);
+                    alertLayout.setVisibility(View.VISIBLE);
+                    exclusionAlert.setVisibility(View.VISIBLE);
+                    exclusionAlert1.setVisibility(View.VISIBLE);
+                    endSession.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(getActivity(), ExclusionActivity.class);
+                            getActivity().finish();
+                            System.exit(0);
+                            startActivity(intent);
+
+                        }
+                    });
+
+                    restartSession.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            getActivity().finish();
+                            startActivity(intent);
+                        }
+                    });
                 }
                 if (check.equals("No")) {
 //
@@ -48,7 +83,7 @@ public class ExclusionActivityFragment extends Fragment {
                     if (finalExclusiveContentPosition[0] < exclusiveContent_array.length) {
                         exclusivePass.setVisibility(View.VISIBLE);
                         exclusivePass.setText("Passed " + finalExclusiveContentPosition[0] + " of 9");
-                        exclusiveContent.setText(exclusiveContent_array[finalExclusiveContentPosition[0]]);
+                        exclusionContent.setText(exclusiveContent_array[finalExclusiveContentPosition[0]]);
                         radioButton.setChecked(false);
                     }
                     else{
