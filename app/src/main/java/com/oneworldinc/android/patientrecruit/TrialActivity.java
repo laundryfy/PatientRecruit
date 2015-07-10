@@ -20,19 +20,22 @@ public class TrialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trial);
 
-        View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
-        view.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT));
-        TextView titleView = (TextView) view.findViewById(R.id.title_text);
-        titleView.setText("Clinical Trial Recruitment Center");
+        // KBala
+                            View view = getLayoutInflater().inflate(R.layout.action_bar_view, null);
+                            view.setLayoutParams(new ViewGroup.LayoutParams(
+                                    ViewGroup.LayoutParams.MATCH_PARENT,
+                                    ViewGroup.LayoutParams.MATCH_PARENT));
+                            TextView titleView = (TextView) view.findViewById(R.id.title_text);
+                            titleView.setText("Clinical Trial Recruitment Center");
 
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar!=null) {
-            actionBar.setElevation(0);
-            actionBar.setCustomView(view);
-            actionBar.setDisplayShowCustomEnabled(true);
-        }
+                            ActionBar actionBar = getSupportActionBar();
+                            if(actionBar!=null) {
+                                actionBar.setElevation(0);
+                                actionBar.setCustomView(view);
+                                actionBar.setDisplayShowCustomEnabled(true);
+                            }
+
+        //KBala
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
