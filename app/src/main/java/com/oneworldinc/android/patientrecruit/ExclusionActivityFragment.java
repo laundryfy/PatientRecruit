@@ -19,6 +19,7 @@ import android.widget.TextView;
 public class ExclusionActivityFragment extends Fragment {
     View rootView;
     Button endSession, restartSession;
+    String alert;
     public ExclusionActivityFragment() {
     }
 
@@ -34,14 +35,14 @@ public class ExclusionActivityFragment extends Fragment {
         final LinearLayout alertLayout = (LinearLayout) rootView.findViewById(R.id.alert_layout);
         final LinearLayout radioLayout = (LinearLayout) rootView.findViewById(R.id.radio_layout);
         final TextView exclusionAlert = (TextView) rootView.findViewById(R.id.exclusion_alertOne);
-        final TextView exclusionAlert1 = (TextView) rootView.findViewById(R.id.exclusion_alertTwo);
+        final TextView exclusionAlertDetail = (TextView) rootView.findViewById(R.id.exclusion_alertTwo);
         endSession = (Button) rootView.findViewById(R.id.button_EndSesson);
         restartSession = (Button) rootView.findViewById(R.id.button_restartSession);
 
-
+        alert=exclusiveContent_array[0];
         exclusionContent.setText(exclusiveContent_array[0]);
         final int[] finalExclusiveContentPosition = {exclusiveContentPosition};
-//        finalExclusiveContentPosition[0]++;
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -50,12 +51,15 @@ public class ExclusionActivityFragment extends Fragment {
                 String check = radioButton.getText().toString();
                 String yes = "Yes";
                 if (check.equals("Yes")) {
+
                     exclusivePass.setVisibility(View.GONE);
                     radioLayout.setVisibility(View.GONE);
                     exclusionContent.setVisibility(View.GONE);
                     alertLayout.setVisibility(View.VISIBLE);
                     exclusionAlert.setVisibility(View.VISIBLE);
-                    exclusionAlert1.setVisibility(View.VISIBLE);
+                    exclusionAlertDetail.setText(alert);
+                    exclusionAlertDetail.setVisibility(View.VISIBLE);
+
                     endSession.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -84,6 +88,7 @@ public class ExclusionActivityFragment extends Fragment {
                         exclusivePass.setVisibility(View.VISIBLE);
                         exclusivePass.setText("Passed " + finalExclusiveContentPosition[0] + " of 9");
                         exclusionContent.setText(exclusiveContent_array[finalExclusiveContentPosition[0]]);
+                        alert=exclusiveContent_array[finalExclusiveContentPosition[0]];
                         radioButton.setChecked(false);
                     }
                     else{

@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.Layout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -51,6 +54,31 @@ TextView trialDetailContent;
                 "Walking Distance 6MWD in patients with PAH ";
         String styledText = "<u><font color='#90EE90'>Full Trial Information</font></u>";
         trialDetailContent.setText(Html.fromHtml(content + styledText), TextView.BufferType.SPANNABLE);
+
+
+        trialDetailContent.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Layout layout = ((TextView) v).getLayout();
+                    int x = (int) event.getX();
+                    int y = (int) event.getY();
+                    if (layout != null) {
+                        int line = layout.getLineForVertical(y);
+                        int offset = layout.getOffsetForHorizontal(line, x);
+                        Log.v("index", "" + offset);
+                        if (offset>=469&&offset<=489) {
+                            Intent intent=new Intent(TrialDetailActivity.this,TrialInfoActivity.class);
+                            finish();
+                            startActivity(intent);
+
+                        }
+                    }
+
+
+                }
+                return true;
+            }
+        });
         
 
         back.setOnClickListener(new View.OnClickListener() {

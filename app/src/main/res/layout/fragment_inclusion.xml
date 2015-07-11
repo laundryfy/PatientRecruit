@@ -17,15 +17,15 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-      <ScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="80"
-        android:padding="50dp">
+        android:layout_weight="80">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -43,9 +43,10 @@
                 android:id="@+id/inclusion_alert_one"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:padding="5dp"
-                android:text="This patient is not qualified for the MOTION study due to the “No” response to the following Inclusion Criterion"
+               android:text="This patient is not qualified for the MOTION study due to the “No” response to the following Inclusion Criterion:"
                 android:textColor="#000000"
                 android:visibility="gone" />
 
@@ -53,6 +54,8 @@
                 android:id="@+id/inclusion_alert_two"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+               android:layout_marginLeft="30dp"
+               android:layout_marginRight="30dp"
                 android:padding="5dp"
                 android:text="On nitrate and/or nitric oxide (NO) donor therapy"
                 android:textColor="#000000"
@@ -94,31 +97,32 @@
     <LinearLayout
         android:id="@+id/alert_layout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
+        android:padding="10dp"
         android:visibility="gone">
 
         <Button
             android:id="@+id/button_end_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ffff8b36"
-            android:text="End Session"
-            android:padding="10dp"
-            android:gravity="center"
-            android:textAllCaps="false"
             android:layout_marginRight="20dp"
+            android:background="#ffff8b36"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="End Session"
+            android:textAllCaps="false"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_restart_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#a02effbc"
-            android:padding="10dp"
             android:layout_marginLeft="20dp"
+            android:background="#a02effbc"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Return to Start"
             android:textAllCaps="false"
             android:textStyle="bold" />

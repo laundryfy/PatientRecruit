@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.oneworldinc.android.patientrecruit" >
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--<uses-permission android:name="android.permission.USE_CREDENTIALS" />-->
-    <!--&lt;!&ndash; To retrieve the account name (email) as part of sign-in: &ndash;&gt;-->
-    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
-    <!--&lt;!&ndash; To auto-complete the email text field in the login form with the user's emails &ndash;&gt;-->
-    <!--<uses-permission android:name="android.permission.READ_PROFILE" />-->
-    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
-    <!--<uses-permission android:name="android.permission.VIBRATE" />-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
-
+    <!-- <uses-permission android:name="android.permission.USE_CREDENTIALS" /> -->
+    <!-- &lt;!&ndash; To retrieve the account name (email) as part of sign-in: &ndash;&gt; -->
+    <!-- <uses-permission android:name="android.permission.GET_ACCOUNTS" /> -->
+    <!-- &lt;!&ndash; To auto-complete the email text field in the login form with the user's emails &ndash;&gt; -->
+    <!-- <uses-permission android:name="android.permission.READ_PROFILE" /> -->
+    <!-- <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
+    <!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="landscape">
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,34 +31,43 @@
         </activity>
         <activity
             android:name=".TrialActivity"
-            android:label="@string/title_activity_trial"
             android:icon="@android:drawable/ic_dialog_email"
-            android:screenOrientation="landscape">
+            android:label="@string/title_activity_trial"
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".SubTrialActivity"
             android:label="@string/title_activity_sub_trial"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".TrialDetailActivity"
             android:label="@string/title_activity_trial_detail"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".ExclusionActivity"
             android:label="@string/title_activity_exclusion"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".InclusionActivity"
             android:label="@string/title_activity_inclusion"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_result"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".TrialInfoActivity"
+            android:label="@string/title_activity_trial_info"
+            android:screenOrientation="landscape"
+            android:parentActivityName=".TrialDetailActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.oneworldinc.android.patientrecruit.TrialDetailActivity" />
         </activity>
     </application>
 

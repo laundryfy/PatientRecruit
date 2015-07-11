@@ -9,6 +9,7 @@
         android:orientation="horizontal"
         android:padding="5dp">
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:gravity="center"

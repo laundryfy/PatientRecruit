@@ -51,4 +51,6 @@
         </item>
         <item>6MWD between 150 meters and 450 meters</item>
     </array>
+    <string name="title_activity_trial_info">TrialInfoActivity</string>
+    <string name="error_field_required">Required</string>
 </resources>

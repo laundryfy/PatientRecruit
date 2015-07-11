@@ -19,6 +19,7 @@ import android.widget.TextView;
 public class InclusionActivityFragment extends Fragment {
 View rootView;
     Button endSession, restartSession;
+    String alert;
 
     public InclusionActivityFragment() {
     }
@@ -35,9 +36,10 @@ View rootView;
         final LinearLayout alertLayout = (LinearLayout) rootView.findViewById(R.id.alert_layout);
         final LinearLayout radioLayout = (LinearLayout) rootView.findViewById(R.id.radio_layout);
         final TextView exclusionAlert = (TextView) rootView.findViewById(R.id.inclusion_alert_one);
-        final TextView exclusionAlert1 = (TextView) rootView.findViewById(R.id.inclusion_alert_two);
+        final TextView exclusionAlertDetail = (TextView) rootView.findViewById(R.id.inclusion_alert_two);
         endSession = (Button) rootView.findViewById(R.id.button_end_session);
         restartSession = (Button) rootView.findViewById(R.id.button_restart_session);
+        alert=inclusionContent_array[0];
         inclusionContent.setText(inclusionContent_array[0]);
         final int[] finalExclusiveContentPosition = {exclusiveContentPosition};
 //        finalExclusiveContentPosition[0]++;
@@ -54,6 +56,7 @@ View rootView;
                         inclusionPass.setVisibility(View.VISIBLE);
                         inclusionPass.setText("Passed " + finalExclusiveContentPosition[0] + " of 6");
                         inclusionContent.setText(inclusionContent_array[finalExclusiveContentPosition[0]]);
+                        alert=inclusionContent_array[finalExclusiveContentPosition[0]];
                         radioButton.setChecked(false);
                     }
                     else{
@@ -71,7 +74,8 @@ View rootView;
                     inclusionContent.setVisibility(View.GONE);
                     alertLayout.setVisibility(View.VISIBLE);
                     exclusionAlert.setVisibility(View.VISIBLE);
-                    exclusionAlert1.setVisibility(View.VISIBLE);
+                    exclusionAlertDetail.setText(alert);
+                    exclusionAlertDetail.setVisibility(View.VISIBLE);
                     endSession.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
