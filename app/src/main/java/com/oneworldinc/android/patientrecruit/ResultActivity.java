@@ -1,5 +1,7 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -40,6 +42,7 @@ public class ResultActivity extends ActionBarActivity {
         if (actionBar != null) {
             actionBar.setElevation(0);
             actionBar.setCustomView(view);
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
 

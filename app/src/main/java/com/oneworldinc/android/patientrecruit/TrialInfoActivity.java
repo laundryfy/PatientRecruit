@@ -2,6 +2,8 @@ package com.oneworldinc.android.patientrecruit;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +39,7 @@ public class TrialInfoActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setElevation(0);
             actionBar.setCustomView(view);
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
 

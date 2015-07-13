@@ -1,5 +1,7 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -30,6 +32,7 @@ public class InclusionActivity extends ActionBarActivity {
         if(actionBar!=null) {
             actionBar.setElevation(0);
             actionBar.setCustomView(view);
+            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
 
