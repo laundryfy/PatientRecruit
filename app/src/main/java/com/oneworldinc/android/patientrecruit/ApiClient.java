@@ -1,5 +1,7 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.util.Log;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -18,6 +20,7 @@ public class ApiClient {
     }
 
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        Log.d(getAbsoluteUrl(url),"Api");
         client.post(getAbsoluteUrl(url), params, responseHandler);
     }
 

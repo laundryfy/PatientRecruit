@@ -1,5 +1,6 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -9,8 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TrialInfoActivity extends AppCompatActivity {
@@ -38,9 +41,23 @@ public class TrialInfoActivity extends AppCompatActivity {
         }
 
         actionBar.setHomeButtonEnabled(true);
-        webView = (WebView) findViewById(R.id.webView_trialInfo);
+//        webView = (WebView) findViewById(R.id.webView_trialInfo);
+//        webView.loadUrl("file:///android_asset/TrialInfo.html");
+
+//Web page link open inside the Application
+        webView = new WebView(this);
+        webView.getSettings().setJavaScriptEnabled(true); // enable javascript
+        final Activity activity = this;
+        webView.setWebViewClient(new WebViewClient() {
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
+            }
+        });
         webView.loadUrl("file:///android_asset/TrialInfo.html");
+        setContentView(webView);
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

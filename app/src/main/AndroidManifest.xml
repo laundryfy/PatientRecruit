@@ -65,6 +65,11 @@
             android:label="@string/title_activity_trial_info"
             android:screenOrientation="landscape"
             android:parentActivityName=".TrialDetailActivity" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.oneworldinc.android.patientrecruit" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.oneworldinc.android.patientrecruit.TrialDetailActivity" />

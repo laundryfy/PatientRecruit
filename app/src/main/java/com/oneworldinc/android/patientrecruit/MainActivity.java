@@ -58,20 +58,18 @@ public class MainActivity extends AppCompatActivity {
         String[] specialtyItem = new String[]{"Specialty", "Cardiologist", "Hematologist", "Rheumatologist", "Pulmonologist", "Infectious Disease", "Other"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, specialtyItem);
         specialtySpinner.setAdapter(adapter);
-        String[] stateDetail = new String[]{"State", "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI",
+        String[] stateDetail = new String[]{"State", "AL", "AK", "AZ", "AR", "CA", "CO", "CT","DC", "DE", "FL", "GA", "HI",
                 "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
-                "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "PC", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+                "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
         ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateDetail);
         stateSpinner.setAdapter(stateAdapter);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 validateRegisterInfo();
             }
         });
-
 
     }
 
@@ -116,11 +114,27 @@ public class MainActivity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
+        if(specialty.equals("Specialty")) {
+            TextView specialtyTextView = (TextView) specialtySpinner.getSelectedView();
+            focusView = specialtyTextView;
+            specialtyTextView.setError("");
+//            specialtyTextView.setTextColor(Color.RED);
+            specialtyTextView.setText("Specialty");
+            cancel=true;
+        }
 
         if (TextUtils.isEmpty(zip)) {
             zipEditView.setError(getString(R.string.error_field_required));
             focusView = zipEditView;
             cancel = true;
+        }
+        if(state.equals("State")) {
+            TextView stateTextView = (TextView) stateSpinner.getSelectedView();
+            focusView = stateTextView;
+            stateTextView.setError("");
+//            stateTextView.setTextColor(Color.RED);
+            stateTextView.setText("State");
+            cancel=true;
         }
         if (TextUtils.isEmpty(city)) {
             cityEditView.setError(getString(R.string.error_field_required));
@@ -147,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
             focusView = firstNameEditView;
             cancel = true;
         }
+
+        cancel = false;
 
         if (cancel) {
             focusView.requestFocus();
@@ -175,5 +191,8 @@ public class MainActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
+//    public boolean isNumeric(String s) {
+//        return s.matches("[-+]?\\d*\\.?\\d+");
+//    }
 
 }

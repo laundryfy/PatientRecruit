@@ -152,6 +152,7 @@
                         android:imeOptions="actionDone"
                         android:padding="10dp"
                         android:singleLine="true"
+                        android:inputType="number"
                         android:textCursorDrawable="@null"
                         android:textStyle="bold" />
                 </LinearLayout>
