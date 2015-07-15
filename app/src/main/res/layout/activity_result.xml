@@ -17,9 +17,10 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="20dp"
-            android:background="#ff3bff57"
+            android:background="#ff095f3c"
             android:gravity="center"
             android:padding="10dp"
+            android:textColor="@android:color/white"
             android:text="Patient is Qualified"
             android:textAllCaps="false"
             android:textSize="16dp"
@@ -47,7 +48,7 @@
                 android:layout_weight="4"
                 android:background="#90969696"
                 android:gravity="center|left"
-                android:hint="John"
+                android:text="Sally"
                 android:imeOptions="actionDone"
                 android:padding="10dp"
                 android:singleLine="true"
@@ -62,7 +63,7 @@
                 android:layout_weight="4"
                 android:background="#90969696"
                 android:gravity="center|left"
-                android:hint="Jones"
+                android:text="Wu"
                 android:imeOptions="actionDone"
                 android:padding="10dp"
                 android:singleLine="true"
@@ -101,13 +102,13 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginBottom="20dp"
-            android:background="#90969696"
+            android:background="#ff095f3c"
             android:gravity="center"
             android:padding="10dp"
+            android:textColor="@android:color/white"
             android:text="Send E-Mail Notification to This Patient"
             android:textAllCaps="false"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+                   android:textStyle="bold" />
     </RelativeLayout>
 
 </LinearLayout>

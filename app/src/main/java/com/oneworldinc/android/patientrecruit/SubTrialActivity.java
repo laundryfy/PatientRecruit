@@ -22,6 +22,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -59,12 +61,28 @@ public class SubTrialActivity extends AppCompatActivity {
 
 
 
-        subTrialText.setOnClickListener(new View.OnClickListener() {
+//        subTrialText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
+//                finish();
+//                startActivity(intent);
+//            }
+//        });
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
-                finish();
-                startActivity(intent);
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                RadioButton radioButton = (RadioButton) findViewById(checkedId);
+                String check = radioButton.getText().toString();
+                 int  index = Integer.parseInt(radioButton.getTag().toString());
+                if (index==1) {
+                    Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
+                    finish();
+                    startActivity(intent);
+                }
+
             }
         });
 

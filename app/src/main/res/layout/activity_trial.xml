@@ -29,6 +29,7 @@
                 android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:state_pressed="false"
                 android:text="Pulmonary arterial hypertension (PAH)"/>
 
             <RadioButton
@@ -36,6 +37,7 @@
                 android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:state_pressed="false"
                 android:text="Worsening chronic heart failure (WCHF)" />
 
             <RadioButton

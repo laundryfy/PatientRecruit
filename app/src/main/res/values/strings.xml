@@ -54,4 +54,5 @@
     <string name="title_activity_trial_info">TrialInfoActivity</string>
     <string name="error_field_required">Required</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_send_mail">SendMailActivity</string>
 </resources>

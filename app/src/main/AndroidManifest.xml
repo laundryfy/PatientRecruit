@@ -19,11 +19,10 @@
         android:label="@string/app_name"
         android:screenOrientation="landscape"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +32,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name=".TrialActivity"
@@ -83,7 +82,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.oneworldinc.android.patientrecruit.TrialDetailActivity" />
         </activity>
-
+        <activity
+            android:name=".SendMailActivity"
+            android:label="@string/title_activity_send_mail"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

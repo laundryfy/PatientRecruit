@@ -1,5 +1,6 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -70,12 +71,17 @@ public class ResultActivity extends ActionBarActivity {
                 if (cancel) {
                     focusView.requestFocus();
                 } else {
-
+                    Intent intent=new Intent(ResultActivity.this,SendMailActivity.class);
+                    startActivity(intent);
+                    finish();
                     ApiClient.post("sendEmail?emailId=" + email, null, new JsonHttpResponseHandler() {
 
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                             //Toast.makeText(ResultActivity.this, "yes", Toast.LENGTH_SHORT).show();
+
+                            Intent intent=new Intent(ResultActivity.this,SendMailActivity.class);
+                            startActivity(intent);
                             finish();
                         }
 
