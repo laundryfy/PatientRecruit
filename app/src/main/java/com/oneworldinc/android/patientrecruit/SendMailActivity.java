@@ -40,11 +40,13 @@ public class SendMailActivity extends ActionBarActivity {
         TextView textView=(TextView)findViewById(R.id.mailSenterName);
         Button newPatient = (Button) findViewById(R.id.button_newPatient);
         Button endSession = (Button) findViewById(R.id.button_end_session);
-        Intent intent=getIntent();
+
         try {
+            Intent intent=getIntent();
             String firstName = intent.getStringExtra("fname");
             String lastName = intent.getStringExtra("lname");
             textView.setText("An email has been sent to your patient," + firstName + lastName);
+
         }catch (Exception e){
             e.printStackTrace();
         }

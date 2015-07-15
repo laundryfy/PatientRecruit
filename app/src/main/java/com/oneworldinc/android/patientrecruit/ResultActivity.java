@@ -26,7 +26,8 @@ import java.util.regex.Pattern;
 
 
 public class ResultActivity extends ActionBarActivity {
-    String firstName,lastName;
+    String firstName, lastName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +52,9 @@ public class ResultActivity extends ActionBarActivity {
 
         Button emailSent = (Button) findViewById(R.id.button_emailSent);
         final EditText emailId = (EditText) findViewById(R.id.text_email);
-        EditText firstNameView = (EditText) findViewById(R.id.firstName);
-        EditText lastNameView = (EditText) findViewById(R.id.lastName);
+        final EditText firstNameView = (EditText) findViewById(R.id.firstName);
+        final EditText lastNameView = (EditText) findViewById(R.id.lastName);
 
-         firstName=firstNameView.getText().toString();
-         lastName=lastNameView.getText().toString();
 
         emailSent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,8 +76,10 @@ public class ResultActivity extends ActionBarActivity {
                     focusView.requestFocus();
                 } else {
                     Intent intent = new Intent(ResultActivity.this, SendMailActivity.class);
-                    intent.putExtra("fname",firstName);
-                    intent.putExtra("lname",lastName);
+                    firstName = firstNameView.getText().toString();
+                    lastName = lastNameView.getText().toString();
+                    intent.putExtra("fname", firstName);
+                    intent.putExtra("lname", lastName);
                     startActivity(intent);
                     finish();
                     ApiClient.post("sendEmail?emailId=" + email, null, new JsonHttpResponseHandler() {

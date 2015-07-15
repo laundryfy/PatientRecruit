@@ -37,7 +37,6 @@
                 android:padding="10dp"
                 android:text="Male or female patients, 18 to 80 years of age at Visit 0"
                 android:textColor="#000000"
-                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
