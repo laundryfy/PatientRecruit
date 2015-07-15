@@ -48,14 +48,14 @@ TextView trialDetailContent;
         trialDetailContent=(TextView)findViewById(R.id.trialDetail);
 
 
-        String content="The MOTION study is a prospective, Phase IV study, enrolling 61 patients" +
-                "with Pulmonary Arterial Hypertension (PAH). The study designed to further" +
-                "explore patient-reported outcomes in PAH subjects who are not on active" +
-                "treatment and living in the United States. In addition, the study will be" +
-                "exploring the use of new telemetric technology (Accelerator band) to" +
-                "evaluate if this technology correlates with improvements in 6 Minute" +
+        String content="The MOTION study is a prospective, Phase IV study, enrolling 61 patients " +
+                "with Pulmonary Arterial Hypertension (PAH). The study designed to further " +
+                "explore patient-reported outcomes in PAH subjects who are not on active " +
+                "treatment and living in the United States. In addition, the study will be " +
+                "exploring the use of new telemetric technology (Accelerator band) to " +
+                "evaluate if this technology correlates with improvements in 6 Minute " +
                 "Walking Distance 6MWD in patients with PAH ";
-        String styledText = "<u><font color='#90EE90'>Full Trial Information</font></u>";
+        String styledText = "<u><font color='#2E9AFE'>Full Trial Information</font></u>";
         trialDetailContent.setText(Html.fromHtml(content + styledText), TextView.BufferType.SPANNABLE);
 
 
@@ -76,7 +76,6 @@ TextView trialDetailContent;
 
                         }
                     }
-
 
                 }
                 return true;

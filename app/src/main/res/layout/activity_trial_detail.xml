@@ -6,71 +6,79 @@
     tools:context="com.oneworldinc.android.patientrecruit.TrialDetailActivity">
 
 
-
-
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="50dp"
-           android:text="MOTION, Measuring Outcomes in Treatment Naive Patients"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="15dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="10dp"
+        android:text="MOTION, Measuring Outcomes in Treatment Naive Patients"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
 
     <ScrollView
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="20dp"
-        android:layout_weight="80"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="80"
+        android:paddingBottom="20dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/trialDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lineSpacingMultiplier="1.5"
-            android:text="The MOTION study is a prospective, Phase IV study, enrolling 61 patients
+            <TextView
+                android:id="@+id/trialDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The MOTION study is a prospective, Phase IV study, enrolling 61 patients
 with Pulmonary Arterial Hypertension (PAH). The study designed to further
 explore patient-reported outcomes in PAH subjects who are not on active
 treatment and living in the United States. In addition, the study will be
 exploring the use of new telemetric technology (Accelerator band) to
 evaluate if this technology correlates with improvements in 6 Minute
 Walking Distance 6MWD in patients with PAH"
-            android:textColor="#000000" />
+                android:textColor="#000000" />
         </LinearLayout>
     </ScrollView>
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
+        android:paddingLeft="50dp"
         android:paddingRight="50dp">
+
         <Button
             android:id="@+id/button_Return"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Return to Trials List "
-            android:textStyle="bold"
-            android:textAllCaps="false"/>
+            android:layout_gravity="top"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
         <Button
-            android:text="Continue to Recruitment Center"
+            android:id="@+id/button_site"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="Site Information"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/button_Continue"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:text="Continue to Recruitment Center"
             android:textAllCaps="false"
-            />
-    </RelativeLayout>
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
 </LinearLayout>

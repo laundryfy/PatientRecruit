@@ -5,8 +5,15 @@
     tools:context="com.oneworldinc.android.patientrecruit.TrialActivity">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:text="Please select a disease or condition"
+    android:gravity="center"
+    android:textColor="@android:color/holo_blue_light"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,7 +43,7 @@
                 android:padding="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Worsening chronic heart failure (WCHF)" />
+                android:text="WCHF and concomitant type 2 DM and/or moderate chronic kidney disease (CKD)" />
 
             <RadioButton
                 android:id="@+id/choice4"
@@ -46,20 +53,20 @@
                 android:text="Erythropoietin-sensitive anemia in patients with chronic kidney disease and end-stage kidney disease"/>
 
 
-            <RadioButton
-                android:id="@+id/choice5"
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Non-cystic fibrosis bronchiectasis"
-                />
+            <!--<RadioButton-->
+                <!--android:id="@+id/choice5"-->
+                <!--android:padding="10dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Worsening chronic heart failure (WCHF)"-->
+                <!--/>-->
             <RadioButton
                 android:id="@+id/choice6"
                 android:padding="10dp"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Erythropoietin-sensitive anemia in patients with chronic kidney disease and end-stage kidney disease"/>
+                android:text="Non-cystic fibrosis bronchiectasis"/>
             <RadioButton
                 android:padding="10dp"
                 android:id="@+id/choice7"
@@ -84,10 +91,6 @@
                 android:text="Diabetic nephropathy (DN) in patients with type 2 DM to reduce the risk of CV death and deterioration of kidney function"/>
 
         </RadioGroup>
-
-
-
-
 
     </ScrollView>
 </LinearLayout>

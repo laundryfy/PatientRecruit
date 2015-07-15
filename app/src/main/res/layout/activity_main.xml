@@ -7,9 +7,12 @@
     android:paddingRight="30dp"
     tools:context=".MainActivity">
 
+
     <ScrollView
+        android:id="@+id/register"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="visible">
 
 
         <LinearLayout
@@ -27,7 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="top"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:text="Please Register"
                     android:textColor="#000000"
                     android:textSize="20dp"
@@ -58,7 +61,7 @@
                         android:layout_weight="4"
                         android:background="#90969696"
                         android:gravity="center|left"
-                        android:hint="First"
+                        android:hint="John"
                         android:imeOptions="actionDone"
                         android:padding="10dp"
                         android:singleLine="true"
@@ -74,7 +77,7 @@
                         android:layout_weight="5"
                         android:background="#90969696"
                         android:gravity="center|left"
-                        android:hint="Last"
+                        android:hint="Jones"
                         android:imeOptions="actionDone"
                         android:padding="10dp"
                         android:singleLine="true"
@@ -96,7 +99,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:background="#90969696"
-                        android:hint="E-mail"
+                        android:hint="john.jones@goodhealth.com"
                         android:imeOptions="actionDone"
                         android:inputType="textEmailAddress"
                         android:padding="10dp"
@@ -120,7 +123,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="4"
                         android:background="#90969696"
-                        android:hint="City"
+                        android:hint="New York"
                         android:imeOptions="actionDone"
                         android:padding="10dp"
                         android:singleLine="true"
@@ -148,11 +151,11 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="3"
                         android:background="#90969696"
-                        android:hint="Zip"
+                        android:hint="10282"
                         android:imeOptions="actionDone"
+                        android:inputType="number"
                         android:padding="10dp"
                         android:singleLine="true"
-                        android:inputType="number"
                         android:textCursorDrawable="@null"
                         android:textStyle="bold" />
                 </LinearLayout>

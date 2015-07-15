@@ -75,7 +75,7 @@ public class ExclusionActivityFragment extends Fragment {
                     restartSession.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            Intent intent = new Intent(getActivity(), TrialActivity.class);
                             getActivity().finish();
                             startActivity(intent);
                         }

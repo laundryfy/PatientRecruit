@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
-
+        final ScrollView registerPage = (ScrollView) findViewById(R.id.register);
+//        final LinearLayout splashScreen = (LinearLayout) findViewById(R.id.splash_screen);
         firstNameEditView = (EditText) findViewById(R.id.firstName);
         lastNameEditView = (EditText) findViewById(R.id.lastName);
         emailIdEditView = (EditText) findViewById(R.id.email);
@@ -56,14 +58,34 @@ public class MainActivity extends AppCompatActivity {
         next = (Button) findViewById(R.id.next);
         specialtySpinner = (Spinner) findViewById(R.id.specialty);
         stateSpinner = (Spinner) findViewById(R.id.state);
+//        try {
+//            splashScreen.setVisibility(View.VISIBLE);
+//            Thread.sleep(10000);
+//            splashScreen.setVisibility(View.GONE);
+//            registerPage.setVisibility(View.VISIBLE);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        Thread thread=new Thread(){
+//            public void run(){
+//                try{
+//                    sleep(10000);
+//                    splashScreen.setVisibility(View.GONE);
+//                    registerPage.setVisibility(View.VISIBLE);
+//                }
+//                catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        };
+//        thread.start();
 
-
-        String[] specialtyItem = new String[]{"Specialty", "Cardiologist", "Hematologist", "Rheumatologist", "Pulmonologist", "Infectious Disease", "Other"};
+        String[] specialtyItem = new String[]{ "Pulmonologist", "Cardiologist", "Hematologist", "Rheumatologist", "Infectious Disease", "Other"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, specialtyItem);
         specialtySpinner.setAdapter(adapter);
-        String[] stateDetail = new String[]{"State", "AL", "AK", "AZ", "AR", "CA", "CO", "CT","DC", "DE", "FL", "GA", "HI",
+        String[] stateDetail = new String[]{"NY","AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI",
                 "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
-                "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+                "NJ", "NM",  "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
         ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateDetail);
         stateSpinner.setAdapter(stateAdapter);
 
@@ -112,18 +134,18 @@ public class MainActivity extends AppCompatActivity {
         city = cityEditView.getText().toString();
         zip = zipEditView.getText().toString();
         state = stateSpinner.getSelectedItem().toString();
-        specialty=specialtySpinner.getSelectedItem().toString();
+        specialty = specialtySpinner.getSelectedItem().toString();
 
         boolean cancel = false;
         View focusView = null;
 
-        if(specialty.equals("Specialty")) {
+        if (specialty.equals("Specialty")) {
             TextView specialtyTextView = (TextView) specialtySpinner.getSelectedView();
             focusView = specialtyTextView;
             specialtyTextView.setError("");
 //            specialtyTextView.setTextColor(Color.RED);
             specialtyTextView.setText("Specialty");
-            cancel=true;
+            cancel = true;
         }
 
         if (TextUtils.isEmpty(zip)) {
@@ -131,13 +153,13 @@ public class MainActivity extends AppCompatActivity {
             focusView = zipEditView;
             cancel = true;
         }
-        if(state.equals("State")) {
+        if (state.equals("State")) {
             TextView stateTextView = (TextView) stateSpinner.getSelectedView();
             focusView = stateTextView;
             stateTextView.setError("");
 //            stateTextView.setTextColor(Color.RED);
             stateTextView.setText("State");
-            cancel=true;
+            cancel = true;
         }
         if (TextUtils.isEmpty(city)) {
             cityEditView.setError(getString(R.string.error_field_required));
@@ -194,8 +216,5 @@ public class MainActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-//    public boolean isNumeric(String s) {
-//        return s.matches("[-+]?\\d*\\.?\\d+");
-//    }
 
 }

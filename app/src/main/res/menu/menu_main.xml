@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
-    <item android:id="@+id/profile" android:title="Profile"
+    <item android:id="@+id/profile" android:title="My Profile"
         app:showAsAction="never"/>
     <item android:id="@+id/videoOverview" android:title="Video overview (2 minute)"
         app:showAsAction="never"/>

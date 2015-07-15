@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingTop="5dp"
         android:text="Passed 0 of 6"
-        android:textColor="#999"
+        android:textColor="@android:color/holo_blue_light"
         android:textSize="16dp"
         android:textStyle="bold"
         android:visibility="visible" />
@@ -33,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:lineSpacingMultiplier="1.5"
+                android:padding="10dp"
                 android:text="Male or female patients, 18 to 80 years of age at Visit 0"
                 android:textColor="#000000"
                 android:textSize="20dp"
@@ -46,7 +47,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:padding="5dp"
-               android:text="This patient is not qualified for the MOTION study due to the “No” response to the following Inclusion Criterion:"
+                android:text="This patient is not qualified for the MOTION study due to the “No” response to the following Inclusion Criterion:"
                 android:textColor="#000000"
                 android:visibility="gone" />
 
@@ -54,8 +55,8 @@
                 android:id="@+id/inclusion_alert_two"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-               android:layout_marginLeft="30dp"
-               android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:padding="5dp"
                 android:text="On nitrate and/or nitric oxide (NO) donor therapy"
                 android:textColor="#000000"
@@ -108,11 +109,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
-            android:background="#ffff8b36"
+            android:background="@android:color/holo_red_dark"
             android:gravity="center"
             android:padding="5dp"
             android:text="End Session"
             android:textAllCaps="false"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <Button
@@ -120,11 +122,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:background="#a02effbc"
+            android:background="#ff095f3c"
             android:gravity="center"
             android:padding="5dp"
             android:text="Return to Start"
             android:textAllCaps="false"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

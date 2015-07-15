@@ -52,7 +52,7 @@ public class SubTrialActivity extends AppCompatActivity {
 
 //Text CF position(font -size,colour,underline)
         Spannable span = new SpannableString(colourChangeText.getText());
-        span.setSpan(new RelativeSizeSpan(1.6f),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.2f),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         span.setSpan(new ForegroundColorSpan(Color.parseColor("#2E9AFE")),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         span.setSpan(new UnderlineSpan(),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         colourChangeText.setText(span);
@@ -97,7 +97,7 @@ public class SubTrialActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -117,10 +117,10 @@ public class SubTrialActivity extends AppCompatActivity {
     }
 
     private void openAlert(View view) {
-        String alert = "CF:Cystic Fibrosis is an\n " +
-                "in herited disorder that\n " +
-                "cause severe damage to\n " +
-                "the lungs and digestive\n " +
+        String alert = "CF: Cystic Fibrosis is an " +
+                "inherited disorder that " +
+                "causes severe damage to " +
+                "the lungs and digestive " +
                 "systems";
         TextView textView = new TextView(this);
         textView.setPadding(10, 10, 10, 10);
