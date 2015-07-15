@@ -35,9 +35,19 @@ public class SendMailActivity extends ActionBarActivity {
             actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
+
+
+        TextView textView=(TextView)findViewById(R.id.mailSenterName);
         Button newPatient = (Button) findViewById(R.id.button_newPatient);
         Button endSession = (Button) findViewById(R.id.button_end_session);
-
+        Intent intent=getIntent();
+        try {
+            String firstName = intent.getStringExtra("fname");
+            String lastName = intent.getStringExtra("lname");
+            textView.setText("An email has been sent to your patient," + firstName + lastName);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         newPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +68,7 @@ public class SendMailActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_send_mail, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

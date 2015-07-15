@@ -26,6 +26,7 @@ import java.util.regex.Pattern;
 
 
 public class ResultActivity extends ActionBarActivity {
+    String firstName,lastName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,11 @@ public class ResultActivity extends ActionBarActivity {
 
         Button emailSent = (Button) findViewById(R.id.button_emailSent);
         final EditText emailId = (EditText) findViewById(R.id.text_email);
+        EditText firstNameView = (EditText) findViewById(R.id.firstName);
+        EditText lastNameView = (EditText) findViewById(R.id.lastName);
 
+         firstName=firstNameView.getText().toString();
+         lastName=lastNameView.getText().toString();
 
         emailSent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +76,9 @@ public class ResultActivity extends ActionBarActivity {
                 if (cancel) {
                     focusView.requestFocus();
                 } else {
-                    Intent intent=new Intent(ResultActivity.this,SendMailActivity.class);
+                    Intent intent = new Intent(ResultActivity.this, SendMailActivity.class);
+                    intent.putExtra("fname",firstName);
+                    intent.putExtra("lname",lastName);
                     startActivity(intent);
                     finish();
                     ApiClient.post("sendEmail?emailId=" + email, null, new JsonHttpResponseHandler() {
@@ -80,7 +87,7 @@ public class ResultActivity extends ActionBarActivity {
                         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                             //Toast.makeText(ResultActivity.this, "yes", Toast.LENGTH_SHORT).show();
 
-                            Intent intent=new Intent(ResultActivity.this,SendMailActivity.class);
+                            Intent intent = new Intent(ResultActivity.this, SendMailActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -132,10 +139,11 @@ public class ResultActivity extends ActionBarActivity {
 
         return matcher.matches();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_result, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

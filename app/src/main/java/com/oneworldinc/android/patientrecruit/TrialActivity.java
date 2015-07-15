@@ -38,14 +38,14 @@ public class TrialActivity extends AppCompatActivity {
         }
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // checkedId is the RadioButton selected
-                RadioButton radioButton = (RadioButton)findViewById(checkedId);
+                RadioButton radioButton = (RadioButton) findViewById(checkedId);
                 String check = radioButton.getText().toString();
-                    if(check.equals("Pulmonary arterial hypertension (PAH)")) {
+                int  index = Integer.parseInt(radioButton.getTag().toString());
+                if (index==1) {
                     Intent intent = new Intent(TrialActivity.this, SubTrialActivity.class);
                     finish();
                     startActivity(intent);

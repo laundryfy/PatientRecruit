@@ -113,7 +113,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="EXPERT, EXPosurE Registry RiociguaT in Patients With Pulmonary Hypertension"
 
                         android:textColor="@android:color/black" />

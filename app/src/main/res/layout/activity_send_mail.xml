@@ -12,13 +12,15 @@
      android:id="@+id/mailSentName"
      android:layout_width="match_parent"
      android:layout_height="0dp"
-     android:layout_weight="95"
+     android:layout_weight="100"
      android:gravity="center">
      <TextView
+         android:id="@+id/mailSenterName"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:gravity="center"
          android:textColor="@android:color/black"
+         android:textStyle="bold"
          android:text="An email has been sent to your patient, Sally Wu"/>
  </LinearLayout>
     <RelativeLayout
@@ -33,8 +35,12 @@
             android:id="@+id/button_newPatient"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
             android:text="Continue with another patient"
             android:layout_gravity="top"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
             android:textAllCaps="false"
             android:textStyle="bold" />
 
@@ -47,6 +53,7 @@
             android:layout_gravity="center"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
+            android:textColor="@android:color/white"
             android:background="@android:color/holo_red_dark"
             android:text="End Session"
             android:textAllCaps="false"
