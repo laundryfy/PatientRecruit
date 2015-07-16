@@ -25,7 +25,8 @@ public class SplashActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         TextView titleView = (TextView) view.findViewById(R.id.title_text);
-        titleView.setText("Welcome to the Bayer Clinical Trial Recruitment Center");
+//        titleView.setText("Welcome to the Bayer Clinical Trial Recruitment Center");
+        titleView.setText(R.string.actionBar_title);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

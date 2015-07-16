@@ -1,5 +1,6 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,14 +57,31 @@ public class ResultActivity extends ActionBarActivity {
         final EditText firstNameView = (EditText) findViewById(R.id.firstName);
         final EditText lastNameView = (EditText) findViewById(R.id.lastName);
 
+//Edit Text view click Time only open the keyboard
+        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(emailId.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(firstNameView.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(lastNameView.getWindowToken(), 0);
+
+        mgr.showSoftInput(emailId, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(firstNameView, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(lastNameView, InputMethodManager.SHOW_IMPLICIT);
 
         emailSent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                firstNameView.setError(null);
+                lastNameView.setError(null);
+                emailId.setError(null);
+
                 String email = emailId.getText().toString();
+                firstName = firstNameView.getText().toString();
+                lastName = lastNameView.getText().toString();
+
                 boolean cancel = false;
                 View focusView = null;
-                // Check for a valid email address.
+
                 if (TextUtils.isEmpty(email)) {
                     emailId.setError("Required");
                     focusView = emailId;
@@ -72,12 +91,20 @@ public class ResultActivity extends ActionBarActivity {
                     focusView = emailId;
                     cancel = true;
                 }
+                if (TextUtils.isEmpty(lastName)) {
+                    lastNameView.setError("Required");
+                    focusView = lastNameView;
+                    cancel = true;
+                }
+                if (TextUtils.isEmpty(firstName)) {
+                    firstNameView.setError("Required");
+                    focusView = firstNameView;
+                    cancel = true;
+                }
                 if (cancel) {
                     focusView.requestFocus();
                 } else {
                     Intent intent = new Intent(ResultActivity.this, SendMailActivity.class);
-                    firstName = firstNameView.getText().toString();
-                    lastName = lastNameView.getText().toString();
                     intent.putExtra("fname", firstName);
                     intent.putExtra("lname", lastName);
                     startActivity(intent);

@@ -34,11 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <RadioGroup
-                        android:id="@+id/trial_radiogroup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+
 
                     <RadioButton
                         android:id="@+id/choice1"
@@ -47,7 +43,7 @@
                         android:padding="10dp"
                         android:tag="1"
                         android:text="" />
-                    </RadioGroup>
+
 
                     <TextView
                         android:id="@+id/subTrial_Text"
@@ -60,20 +56,20 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/choice2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50dp"
                         android:padding="10dp"
                         android:text="" />
 
                     <TextView
                         android:id="@+id/colourChangeText"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Early Signs of Efficacy Study With Riociguat in Adult Homozygous Delta F508 CF Patients"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
@@ -114,14 +110,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="EXPERT, EXPosurE Registry RiociguaT in Patients With Pulmonary Hypertension"
+                        android:text="EXPERT, EXPosurE Registry Riociguat in Patients With Pulmonary Hypertension"
 
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -133,7 +129,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Efficacy and Safety of Riociguat in Patients With Symptomatic PH Associated With IIP"
                         android:textColor="@android:color/black"  />
                 </LinearLayout>

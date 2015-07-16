@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">PatientRecruit</string>
 
+    <bool name="isTablet">true</bool>
+    <string name="app_name">PatientRecruit</string>
+    <string name="fname">Sally</string>
+    <string name="lname">Longo</string>
+    <string name="email">sally.longo@bayer.com</string>
+    <string name="city"> Phoenix</string>
+    <string name="Zip">85001</string>
+    <string name="actionBar_title">Welcome to the Bayer MSL Clinical Trial Recruitment Center</string>
+    <string name="email_sender">An email has been sent to Dr. Jones and his patient,</string>
+    <string name="email_fname">Jane</string>
+    <string name="email_lname">Wu</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_trial">TrialActivity</string>
@@ -11,15 +21,21 @@
     <string name="title_activity_result">ResultActivity</string>
     <string name="action_register">Register</string>
     <array name="exclusion_criteria">
-        <item>Pregnantsakjdksajdlkaj</item>
+        <item>Pregnant</item>
         <item>On nitrate and/or nitric oxide (NO) donor therapy</item>
-        <item>Taking phosphodiesterase 5 (PDE5) inhibitors (such as sildenafil, tadalafil, vardenafil)</item>
+        <item>Taking phosphodiesterase 5 (PDE5) inhibitors (such as sildenafil, tadalafil,
+            vardenafil)
+        </item>
         <item>Taking non-specific PDE inhibitors (theophylline,dipyridamole)</item>
         <item>Non-WHO group 1 Pulmonary Hypertension</item>
         <item>Severe restrictive lung disease</item>
         <item>History of uncontrolled high blood pressure or hypotension</item>
-        <item>A medical disorder, condition, or history that in the opinion of the Investigator would impair their ability to participate or complete this study</item>
-        <item>Active state of hemoptysis or pulmonary hemorrhage,including those events managed by bronchial artery embolization</item>
+        <item>A medical disorder, condition, or history that in the opinion of the Investigator
+            would impair their ability to participate or complete this study
+        </item>
+        <item>Active state of hemoptysis or pulmonary hemorrhage,including those events managed by
+            bronchial artery embolization
+        </item>
 
     </array>
     <array name="inclusion_criteria">

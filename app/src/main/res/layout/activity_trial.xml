@@ -34,20 +34,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <RadioGroup
-                        android:id="@+id/trial_radiogroup"
+                    <RadioButton
+                        android:id="@+id/choice1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:padding="10dp"
+                        android:tag="1"
+                        android:text="" />
 
-                        <RadioButton
-                            android:id="@+id/choice1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:tag="1"
-                            android:text="" />
-                    </RadioGroup>
 
                     <TextView
                         android:id="@+id/subTrial_Text"
@@ -79,8 +73,10 @@
                 </LinearLayout>
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -93,14 +89,14 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="WCHF and concomitant type 2 DM and/or moderate chronic kidney disease (CKD)"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -113,7 +109,7 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Erythropoietin-sensitive anemia in patients with chronic kidney disease and end-stage kidney disease"
 
                         android:textColor="@android:color/black" />
@@ -178,7 +174,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -190,15 +186,16 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Diabetic nephropathy (DN) in patients with type 2 DM to reduce the risk of CV death and deterioration of kidney function"
                         android:textColor="@android:color/black" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text=""
                     android:padding="5dp"
+                    android:text=""
                     android:textColor="@android:color/black" />
 
             </LinearLayout>

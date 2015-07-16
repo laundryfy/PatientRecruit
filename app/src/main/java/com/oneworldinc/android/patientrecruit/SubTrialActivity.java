@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -54,35 +53,35 @@ public class SubTrialActivity extends AppCompatActivity {
 
 //Text CF position(font -size,colour,underline)
         Spannable span = new SpannableString(colourChangeText.getText());
-        span.setSpan(new RelativeSizeSpan(1.2f),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        span.setSpan(new ForegroundColorSpan(Color.parseColor("#2E9AFE")),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        span.setSpan(new UnderlineSpan(),76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new RelativeSizeSpan(1.2f), 76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new ForegroundColorSpan(Color.parseColor("#2E9AFE")), 76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(new UnderlineSpan(), 76, 79, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         colourChangeText.setText(span);
 
 
-
-//        subTrialText.setOnClickListener(new View.OnClickListener() {
+//        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
+//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 //            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
-//                finish();
-//                startActivity(intent);
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                // checkedId is the RadioButton selected
+//                RadioButton radioButton = (RadioButton) findViewById(checkedId);
+//                String check = radioButton.getText().toString();
+//                 int  index = Integer.parseInt(radioButton.getTag().toString());
+//                if (index==1) {
+//                    Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
+//                    finish();
+//                    startActivity(intent);
+//                }
+//
 //            }
 //        });
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.trial_radiogroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        RadioButton radioButton = (RadioButton) findViewById(R.id.choice1);
+        radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // checkedId is the RadioButton selected
-                RadioButton radioButton = (RadioButton) findViewById(checkedId);
-                String check = radioButton.getText().toString();
-                 int  index = Integer.parseInt(radioButton.getTag().toString());
-                if (index==1) {
-                    Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
-                    finish();
-                    startActivity(intent);
-                }
-
+            public void onClick(View v) {
+                Intent intent = new Intent(SubTrialActivity.this, TrialDetailActivity.class);
+                finish();
+                startActivity(intent);
             }
         });
 
@@ -109,7 +108,7 @@ public class SubTrialActivity extends AppCompatActivity {
                 }
                 return true;
             }
-    });
+        });
     }
 
     @Override
@@ -135,6 +134,7 @@ public class SubTrialActivity extends AppCompatActivity {
     }
 
     private void openAlert(View view) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         String alert = "CF: Cystic Fibrosis is an " +
                 "inherited disorder that " +
                 "causes severe damage to " +
@@ -145,19 +145,20 @@ public class SubTrialActivity extends AppCompatActivity {
         textView.setTextColor(Color.rgb(60, 128, 203));
         textView.setText(alert);
         textView.setGravity(Gravity.NO_GRAVITY);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
         Dialog dialog = alertDialogBuilder.setView(textView).create();
-
+        final Dialog finalDialog = dialog;
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finalDialog.cancel();
+            }
+        });
         dialog.show();
-
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = 600;
         lp.dimAmount = 0.1f;
-
         dialog.getWindow().setAttributes(lp);
         dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
-
 }

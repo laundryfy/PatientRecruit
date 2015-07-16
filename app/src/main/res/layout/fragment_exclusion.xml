@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:text="Passed 0 of 9"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="16dp"
@@ -34,13 +34,14 @@
 
             <TextView
                 android:id="@+id/exclusion_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:text="Pregnant"
                 android:textColor="#000000"
-
                 android:textStyle="bold"
                 android:visibility="visible" />
 

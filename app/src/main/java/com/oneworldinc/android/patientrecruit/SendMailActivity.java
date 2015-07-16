@@ -3,9 +3,9 @@ package com.oneworldinc.android.patientrecruit;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class SendMailActivity extends ActionBarActivity {
+public class SendMailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +43,10 @@ public class SendMailActivity extends ActionBarActivity {
 
         try {
             Intent intent=getIntent();
+            String get=getString(R.string.email_sender);
             String firstName = intent.getStringExtra("fname");
             String lastName = intent.getStringExtra("lname");
-            textView.setText("An email has been sent to your patient," + firstName + lastName);
+            textView.setText(get+firstName+" "+lastName);
 
         }catch (Exception e){
             e.printStackTrace();

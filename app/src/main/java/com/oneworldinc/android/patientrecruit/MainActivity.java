@@ -1,5 +1,6 @@
 package com.oneworldinc.android.patientrecruit;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,10 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner stateSpinner, specialtySpinner;
     Button next;
     String firstName, lastName, emilId, city, state, zip, specialty;
+    String[] stateDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         TextView titleView = (TextView) view.findViewById(R.id.title_text);
-        titleView.setText("Welcome to the Bayer Clinical Trial Recruitment Center");
+        titleView.setText(R.string.actionBar_title);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -48,45 +50,49 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
             actionBar.setDisplayShowCustomEnabled(true);
         }
-        final ScrollView registerPage = (ScrollView) findViewById(R.id.register);
-//        final LinearLayout splashScreen = (LinearLayout) findViewById(R.id.splash_screen);
+
         firstNameEditView = (EditText) findViewById(R.id.firstName);
         lastNameEditView = (EditText) findViewById(R.id.lastName);
         emailIdEditView = (EditText) findViewById(R.id.email);
         cityEditView = (EditText) findViewById(R.id.city);
         zipEditView = (EditText) findViewById(R.id.zip);
         next = (Button) findViewById(R.id.next);
-        specialtySpinner = (Spinner) findViewById(R.id.specialty);
-        stateSpinner = (Spinner) findViewById(R.id.state);
-//        try {
-//            splashScreen.setVisibility(View.VISIBLE);
-//            Thread.sleep(10000);
-//            splashScreen.setVisibility(View.GONE);
-//            registerPage.setVisibility(View.VISIBLE);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        Thread thread=new Thread(){
-//            public void run(){
-//                try{
-//                    sleep(10000);
-//                    splashScreen.setVisibility(View.GONE);
-//                    registerPage.setVisibility(View.VISIBLE);
-//                }
-//                catch (Exception e){
-//                    e.printStackTrace();
-//                }
-//            }
-//        };
-//        thread.start();
 
-        String[] specialtyItem = new String[]{ "Pulmonologist", "Cardiologist", "Hematologist", "Rheumatologist", "Infectious Disease", "Other"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, specialtyItem);
-        specialtySpinner.setAdapter(adapter);
-        String[] stateDetail = new String[]{"NY","AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI",
-                "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
-                "NJ", "NM",  "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
-        ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateDetail);
+        stateSpinner = (Spinner) findViewById(R.id.state);
+
+//Edit Text view click Time only open the keyboard
+        InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        mgr.hideSoftInputFromWindow(firstNameEditView.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(lastNameEditView.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(emailIdEditView.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(cityEditView.getWindowToken(), 0);
+        mgr.hideSoftInputFromWindow(zipEditView.getWindowToken(), 0);
+        mgr.showSoftInput(firstNameEditView, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(lastNameEditView, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(emailIdEditView, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(cityEditView, InputMethodManager.SHOW_IMPLICIT);
+        mgr.showSoftInput(zipEditView, InputMethodManager.SHOW_IMPLICIT);
+
+
+        boolean tabletSize = getResources().getBoolean(R.bool.isTablet);
+        if (tabletSize) {
+            stateDetail = new String[]{"AZ", "NY", "AL", "AK", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI",
+                    "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+                    "NJ", "NM", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+
+        } else {
+            specialtySpinner = (Spinner) findViewById(R.id.specialty);
+            String[] specialtyItem = new String[]{"Pulmonologist", "Cardiologist", "Hematologist", "Rheumatologist", "Infectious Disease", "Other"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, specialtyItem);
+            specialtySpinner.setAdapter(adapter);
+            stateDetail = new String[]{"NY", "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI",
+                    "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+                    "NJ", "NM", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"};
+        }
+
+
+        ArrayAdapter<String> stateAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, stateDetail);//State = AZ(tab)
+
         stateSpinner.setAdapter(stateAdapter);
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     //register view validate
     public void validateRegisterInfo() {
+
         firstNameEditView.setError(null);
         lastNameEditView.setError(null);
         emailIdEditView.setError(null);
@@ -134,18 +141,27 @@ public class MainActivity extends AppCompatActivity {
         city = cityEditView.getText().toString();
         zip = zipEditView.getText().toString();
         state = stateSpinner.getSelectedItem().toString();
-        specialty = specialtySpinner.getSelectedItem().toString();
+        try {
+            specialty = specialtySpinner.getSelectedItem().toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
 
         boolean cancel = false;
         View focusView = null;
 
-        if (specialty.equals("Specialty")) {
-            TextView specialtyTextView = (TextView) specialtySpinner.getSelectedView();
-            focusView = specialtyTextView;
-            specialtyTextView.setError("");
+        try {
+            if (specialty.equals("Specialty")) {
+                TextView specialtyTextView = (TextView) specialtySpinner.getSelectedView();
+                focusView = specialtyTextView;
+                specialtyTextView.setError("");
 //            specialtyTextView.setTextColor(Color.RED);
-            specialtyTextView.setText("Specialty");
-            cancel = true;
+                specialtyTextView.setText("Specialty");
+                cancel = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         if (TextUtils.isEmpty(zip)) {
@@ -180,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
             focusView = lastNameEditView;
             cancel = true;
         }
-
         if (TextUtils.isEmpty(firstName)) {
             firstNameEditView.setError(getString(R.string.error_field_required));
             focusView = firstNameEditView;
@@ -209,12 +224,9 @@ public class MainActivity extends AppCompatActivity {
                         + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
 
         CharSequence inputStr = email;
-
         Pattern pattern = Pattern.compile(regExpn, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(inputStr);
 
         return matcher.matches();
     }
-
-
 }

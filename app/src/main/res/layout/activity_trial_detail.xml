@@ -47,7 +47,8 @@ Walking Distance 6MWD in patients with PAH"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        android:weightSum="100">
 
         <Button
             android:id="@+id/button_Return"
@@ -56,7 +57,8 @@ Walking Distance 6MWD in patients with PAH"
             android:text="Return to Trials List "
             android:layout_gravity="top"
             android:textAllCaps="false"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_weight="33.3"/>
 
         <Button
             android:id="@+id/button_site"
@@ -66,7 +68,8 @@ Walking Distance 6MWD in patients with PAH"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:text="Site Information"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:layout_weight="33.3"/>
 
         <Button
             android:id="@+id/button_Continue"
@@ -75,7 +78,8 @@ Walking Distance 6MWD in patients with PAH"
             android:layout_gravity="center"
             android:text="Continue to Recruitment Center"
             android:textAllCaps="false"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_weight="33.3"/>
     </LinearLayout>
 
 
